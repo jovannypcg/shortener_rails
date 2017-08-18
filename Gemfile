@@ -16,8 +16,6 @@ gem 'jbuilder', '~> 2.5'
 # Frontend stuff
 gem 'slim-rails'
 gem 'simple_form'
-gem 'materialize-sass'
-gem 'material_icons'
 
 gem 'digest-crc', '~> 0.4.1'
 
