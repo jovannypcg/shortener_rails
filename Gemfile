@@ -22,7 +22,8 @@ gem 'jquery-rails'
 gem 'digest-crc', '~> 0.4.1'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
+  gem 'pry-nav'
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.6'
 end
