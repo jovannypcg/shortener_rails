@@ -16,6 +16,8 @@ gem 'jbuilder', '~> 2.5'
 # Frontend stuff
 gem 'slim-rails'
 gem 'simple_form'
+gem 'bootstrap', '4.0.0.alpha6'
+gem 'jquery-rails'
 
 gem 'digest-crc', '~> 0.4.1'
 
