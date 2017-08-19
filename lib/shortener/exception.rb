@@ -1,0 +1,2 @@
+class SlugAlreadyTaken < Exception
+end
