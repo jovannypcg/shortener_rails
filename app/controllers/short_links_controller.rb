@@ -11,9 +11,15 @@ class ShortLinksController < ApplicationController
     @short_link = ShortLink.new(request_params)
     @short_link.slug = hash_destination(@short_link.destination)
 
-    # @short_link.save
+    if @short_link.save
+      redirect_to @short_link
+    else
+      render 'new'
+    end
+  end
 
-    render 'new'
+  def show
+    @short_link = ShortLink.find(params[:id])
   end
 
   private
