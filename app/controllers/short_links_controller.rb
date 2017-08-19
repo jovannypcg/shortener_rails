@@ -2,6 +2,7 @@ class ShortLinksController < ApplicationController
   def handleSlug
     @short_link = ShortLink.find_by(slug: params[:slug])
 
+    count_visit(@short_link)
     redirect_to @short_link.destination
   end
 
@@ -42,5 +43,10 @@ class ShortLinksController < ApplicationController
       @short_link = ShortLink.find_by(slug: slug)
 
       redirect_to @short_link
+    end
+
+    def count_visit(short_link)
+      short_link.increment(:visits)
+      short_link.save
     end
 end
