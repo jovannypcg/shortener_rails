@@ -205,6 +205,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bootstrap (= 4.0.0.alpha6)
   coffee-rails (~> 4.2)
   digest-crc (~> 0.4.1)

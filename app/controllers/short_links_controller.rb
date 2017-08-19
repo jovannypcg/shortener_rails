@@ -11,7 +11,9 @@ class ShortLinksController < ApplicationController
     @short_link = ShortLink.new(request_params)
     @short_link.slug = hash_destination(@short_link.destination)
 
-    binding.pry
+    # @short_link.save
+
+    render 'new'
   end
 
   private

@@ -1,6 +1,9 @@
-h1 Shorten
+h1 sho.rt
 
 = simple_form_for @short_link do |f|
   = f.input :destination
   = f.button :submit
-    | Shorten
+    Shorten
+
+- unless @short_link.slug.nil?
+  = slug_info(@short_link.slug)
