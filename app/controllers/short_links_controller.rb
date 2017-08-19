@@ -1,6 +1,8 @@
 class ShortLinksController < ApplicationController
   def handleSlug
-    render plain: "Handling slug..."
+    @short_link = ShortLink.find_by(slug: params[:slug])
+
+    redirect_to @short_link.destination
   end
 
   def new
