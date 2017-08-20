@@ -27,6 +27,8 @@ group :development, :test do
   gem 'pry-nav'
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.6'
+  gem 'faker', '~> 1.8', '>= 1.8.4'
+  gem 'factory_girl_rails'
 end
 
 group :development do
