@@ -11,5 +11,18 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ShortLinksHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:short_link) { FactoryGirl.create(:short_link) }
+
+  before(:each) do
+    helper.request.host = 'localhost:3000'
+  end
+
+  describe '#slug_info' do
+    it 'includes href to slug url' do
+      html_slug_info = helper.slug_info(short_link.slug)
+      slug_url = "#{helper.request.host_with_port}/#{short_link.slug}"
+
+      expect(html_slug_info).to include("://#{slug_url}")
+    end
+  end
 end
