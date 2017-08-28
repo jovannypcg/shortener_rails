@@ -12,13 +12,10 @@ class ShortLinksController < ApplicationController
 
   def create
     @short_link = ShortLink.new(request_params)
-    @short_link.slug = hash_destination(@short_link.destination)
+    # @short_link.slug = hash_destination(@short_link.destination)
 
-    if @short_link.save!
-      redirect_to @short_link
-    else
-      render 'new'
-    end
+    @short_link.save!
+    redirect_to @short_link
 
   rescue ActiveRecord::RecordInvalid => exception
     render 'new'
@@ -33,10 +30,6 @@ class ShortLinksController < ApplicationController
   private
     def request_params
       params.require(:short_link).permit(:destination)
-    end
-
-    def hash_destination(dest)
-      Digest::CRC32.hexdigest(dest)
     end
 
     def handleExistingSlug(slug)

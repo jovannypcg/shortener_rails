@@ -4,8 +4,13 @@ class ShortLink < ApplicationRecord
     message: 'Enter a valid URL' }
 
   after_initialize :init
+  before_validation :hash_destination
 
   def init
     self.visits ||= 0
+  end
+
+  def hash_destination
+    self.slug = Digest::CRC32.hexdigest(destination)
   end
 end
